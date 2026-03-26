@@ -1,0 +1,123 @@
+"""
+A dropshipping supplier (CJDropshipping, AliExpress, custom, digital)
+"""
+type DropshippingSupplier {
+  supplierId: ID!
+  name: String!
+  type: String!
+  apiEndpoint: String
+  status: Boolean!
+  productCount: Int
+  createdAt: String
+  updatedAt: String
+}
+
+"""
+A mapping between an EverShop product and a supplier product
+"""
+type DropshippingProduct {
+  id: ID!
+  productId: Int!
+  supplierId: ID!
+  supplierProductId: String!
+  supplierVariantId: String
+  supplierSku: String
+  supplierCost: Float!
+  markupType: String!
+  markupValue: Float!
+  autoPriceSync: Boolean!
+  autoStockSync: Boolean!
+  isDigital: Boolean!
+  lastSyncedAt: String
+  supplier: DropshippingSupplier
+}
+
+"""
+A dropshipping order forwarded to a supplier
+"""
+type DropshippingOrder {
+  id: ID!
+  orderId: Int!
+  supplierId: ID
+  supplierOrderId: String
+  status: String!
+  trackingNumber: String
+  carrier: String
+  cost: Float
+  profit: Float
+  errorMessage: String
+  submittedAt: String
+  shippedAt: String
+  deliveredAt: String
+  createdAt: String
+  supplier: DropshippingSupplier
+}
+
+"""
+A pricing rule for automatic markup calculation
+"""
+type DropshippingPricingRule {
+  id: ID!
+  name: String!
+  supplierId: ID
+  costFrom: Float
+  costTo: Float
+  markupType: String!
+  markupValue: Float!
+  minProfit: Float
+  roundTo: Float
+  priority: Int!
+  isActive: Boolean!
+}
+
+"""
+A digital product (file/license delivered after purchase)
+"""
+type DropshippingDigitalProduct {
+  id: ID!
+  productId: Int!
+  fileName: String
+  fileUrl: String
+  downloadLimit: Int!
+  expiryDays: Int!
+  licenseType: String!
+  deliveryMethod: String!
+}
+
+"""
+Dropshipping analytics summary
+"""
+type DropshippingAnalytics {
+  date: String!
+  supplier: DropshippingSupplier
+  ordersCount: Int!
+  revenue: Float
+  cost: Float!
+  profit: Float!
+}
+
+"""
+Dropshipping dashboard summary
+"""
+type DropshippingDashboard {
+  activeSuppliers: Int!
+  totalProducts: Int!
+  digitalProducts: Int!
+  last30DaysOrders: Int!
+  last30DaysProfit: Float!
+  last30DaysCost: Float!
+}
+
+extend type Query {
+  dropshippingSuppliers: [DropshippingSupplier]
+  dropshippingSupplier(supplierId: ID!): DropshippingSupplier
+  dropshippingOrders(status: String, limit: Int, offset: Int): [DropshippingOrder]
+  dropshippingDashboard: DropshippingDashboard
+  dropshippingPricingRules(supplierId: ID): [DropshippingPricingRule]
+  dropshippingDigitalProducts: [DropshippingDigitalProduct]
+  dropshippingAnalytics(days: Int): [DropshippingAnalytics]
+}
+
+extend type Order {
+  dropshippingOrders: [DropshippingOrder]
+}

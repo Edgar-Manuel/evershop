@@ -1,0 +1,5 @@
+{
+  "methods": ["PATCH"],
+  "path": "/dropshipping/suppliers/:id",
+  "access": "private"
+}

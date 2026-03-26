@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "type": {
+      "type": "string",
+      "enum": ["cjdropshipping", "aliexpress", "custom", "digital"]
+    },
+    "apiKey": { "type": "string" },
+    "apiSecret": { "type": "string" },
+    "apiEndpoint": { "type": "string" },
+    "config": { "type": "object" }
+  },
+  "required": ["name"],
+  "additionalProperties": false
+}

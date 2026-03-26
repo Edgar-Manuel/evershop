@@ -1,0 +1,5 @@
+{
+  "methods": ["POST"],
+  "path": "/dropshipping/digital-products",
+  "access": "private"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "supplierId": { "type": "string" },
+    "supplierProductId": { "type": "string" },
+    "categoryId": { "type": ["string", "integer", "null"] },
+    "markupType": { "type": "string", "enum": ["percentage", "fixed"] },
+    "markupValue": { "type": "number", "minimum": 0 }
+  },
+  "required": ["supplierId", "supplierProductId"],
+  "additionalProperties": false
+}

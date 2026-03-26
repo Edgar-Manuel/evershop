@@ -1,0 +1,5 @@
+{
+  "methods": ["GET"],
+  "path": "/dropshipping/suppliers/:id/search",
+  "access": "private"
+}

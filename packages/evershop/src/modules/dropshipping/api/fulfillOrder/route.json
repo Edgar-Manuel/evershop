@@ -1,0 +1,5 @@
+{
+  "methods": ["POST"],
+  "path": "/dropshipping/orders/:orderId/fulfill",
+  "access": "private"
+}
