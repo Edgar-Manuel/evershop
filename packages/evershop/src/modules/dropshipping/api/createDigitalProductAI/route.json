@@ -1,0 +1,5 @@
+{
+  "methods": ["POST"],
+  "path": "/dropshipping/wizard/create-digital",
+  "access": "private"
+}

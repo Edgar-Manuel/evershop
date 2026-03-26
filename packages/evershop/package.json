@@ -131,6 +131,7 @@
   },
   "homepage": "http://evershop.io/",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.80.0",
     "@base-ui/react": "^1.1.0",
     "@ckeditor/ckeditor5-build-classic": "^36.0.1",
     "@ckeditor/ckeditor5-react": "^5.1.0",
@@ -180,6 +181,7 @@
     "express-session": "^1.17.3",
     "fast-glob": "^3.3.3",
     "flatpickr": "^4.6.9",
+    "google-trends-api": "^4.9.2",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "graphql-type-json": "^0.3.2",

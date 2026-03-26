@@ -212,10 +212,10 @@ export default function DropshippingDashboard() {
       {/* Quick Links */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {[
+          { href: '/admin/dropshipping/wizard', label: 'Quick Wizard', icon: '✨' },
           { href: '/admin/dropshipping/import', label: 'Import Products', icon: '📦' },
           { href: '/admin/dropshipping/digital', label: 'Digital Products', icon: '💾' },
-          { href: '/admin/dropshipping/pricing', label: 'Pricing Rules', icon: '💰' },
-          { href: '/admin/dropshipping/analytics', label: 'Analytics', icon: '📊' }
+          { href: '/admin/dropshipping/pricing', label: 'Pricing Rules', icon: '💰' }
         ].map((link) => (
           <a
             key={link.href}

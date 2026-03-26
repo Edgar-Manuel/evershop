@@ -117,7 +117,8 @@ export default async () => {
         { id: 'dropshipping-suppliers', name: 'Suppliers', url: '/admin/dropshipping/suppliers' },
         { id: 'dropshipping-import', name: 'Import Products', url: '/admin/dropshipping/import' },
         { id: 'dropshipping-pricing', name: 'Pricing Rules', url: '/admin/dropshipping/pricing' },
-        { id: 'dropshipping-digital', name: 'Digital Products', url: '/admin/dropshipping/digital' }
+        { id: 'dropshipping-digital', name: 'Digital Products', url: '/admin/dropshipping/digital' },
+        { id: 'dropshipping-wizard', name: '✨ Quick Wizard', url: '/admin/dropshipping/wizard' }
       ]
     });
     return items;

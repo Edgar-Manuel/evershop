@@ -1,0 +1,5 @@
+{
+  "methods": ["GET"],
+  "path": "/dropshipping/wizard/trends",
+  "access": "private"
+}
